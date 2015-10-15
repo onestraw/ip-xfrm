@@ -188,6 +188,7 @@ ctags: $(HEADERS) $(SOURCES)
 #-------------------------------------
 $(PROGRAM):$(OBJS)
 ifeq ($(SRC_CXX),)              # C program
+	cd lib && $(MAKE) && cd ..
 	$(LINK.c)   $(OBJS) $(MY_LIBS) -o $@
 	@echo Type ./$@ to execute the program.
 else                            # C++ program
@@ -202,6 +203,7 @@ endif
 endif
 
 clean:
+	cd lib && $(MAKE) clean && cd ..
 	$(RM) $(OBJS) $(PROGRAM) $(PROGRAM).exe
 
 distclean: clean
