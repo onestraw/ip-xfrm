@@ -9,8 +9,8 @@ UTILOBJ = utils.o rt_names.o ll_types.o ll_proto.o ll_addr.o \
 	mpls_ntop.o mpls_pton.o \
 	ipx_ntop.o \
 	inet_proto.o \
-	json_writer.o \
-	names.o color.o \
+	names.o \
+        color.o \
 	namespace.o 
 
 NLOBJ=libgenl.o ll_map.o libnetlink.o

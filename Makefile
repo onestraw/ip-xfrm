@@ -23,7 +23,7 @@
 ##==========================================================================
 
 # The pre-processor and compiler options.
-MY_CFLAGS = `pkg-config --cflags libnl-3.0`  -I include/ -w
+MY_CFLAGS = `pkg-config --cflags libnl-3.0`  -I include/ 
 
 # The linker options.
 MY_LIBS   = `pkg-config --libs libnl-3.0` -L lib -lnetlink -lutil
