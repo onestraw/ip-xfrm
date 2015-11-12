@@ -21,7 +21,6 @@
 
 #include "utils.h"
 #include "ip_common.h"
-#include "namespace.h"
 static const char SNAPSHOT[] = "150831";
 
 int preferred_family = AF_UNSPEC;
@@ -270,10 +269,6 @@ int main(int argc, char **argv)
 			//enable_color();
 		} else if (matches(opt, "-help") == 0) {
 			usage();
-		} else if (matches(opt, "-netns") == 0) {
-			NEXT_ARG();
-			if (netns_switch(argv[1]))
-				exit(-1);
 		} else if (matches(opt, "-all") == 0) {
 			do_all = true;
 		} else {

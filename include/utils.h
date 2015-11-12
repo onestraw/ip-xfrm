@@ -9,7 +9,6 @@
 
 #include "libnetlink.h"
 #include "ll_map.h"
-#include "rtm_map.h"
 
 extern int preferred_family;
 extern int human_readable;
