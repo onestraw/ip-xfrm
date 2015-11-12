@@ -19,11 +19,10 @@
 #include <string.h>
 #include <errno.h>
 
-#include "SNAPSHOT.h"
 #include "utils.h"
 #include "ip_common.h"
 #include "namespace.h"
-#include "color.h"
+static const char SNAPSHOT[] = "150831";
 
 int preferred_family = AF_UNSPEC;
 int human_readable;
@@ -268,7 +267,7 @@ int main(int argc, char **argv)
 			}
 			rcvbuf = size;
 		} else if (matches(opt, "-color") == 0) {
-			enable_color();
+			//enable_color();
 		} else if (matches(opt, "-help") == 0) {
 			usage();
 		} else if (matches(opt, "-netns") == 0) {
