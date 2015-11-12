@@ -37,7 +37,6 @@
 
 #include "utils.h"
 #include "xfrm.h"
-#include "ip_common.h"
 
 #define STRBUF_SIZE	(128)
 #define STRBUF_CAT(buf, str) \

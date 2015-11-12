@@ -20,7 +20,7 @@
 #include <errno.h>
 
 #include "utils.h"
-#include "ip_common.h"
+#include "xfrm.h"
 static const char SNAPSHOT[] = "150831";
 
 int preferred_family = AF_UNSPEC;
@@ -45,12 +45,9 @@ static void usage(void) __attribute__((noreturn));
 static void usage(void)
 {
 	fprintf(stderr,
-"Usage: ip [ OPTIONS ] OBJECT { COMMAND | help }\n"
+"Usage: ip [ OPTIONS ] xfrm { COMMAND | help }\n"
 "       ip [ -force ] -batch filename\n"
-"where  OBJECT := { link | address | addrlabel | route | rule | neighbor | ntable |\n"
-"                   tunnel | tuntap | maddress | mroute | mrule | monitor | xfrm |\n"
-"                   netns | l2tp | fou | tcp_metrics | token | netconf }\n"
-"       OPTIONS := { -V[ersion] | -s[tatistics] | -d[etails] | -r[esolve] |\n"
+"where  OPTIONS := { -V[ersion] | -s[tatistics] | -d[etails] | -r[esolve] |\n"
 "                    -h[uman-readable] | -iec |\n"
 "                    -f[amily] { inet | inet6 | ipx | dnet | mpls | bridge | link } |\n"
 "                    -4 | -6 | -I | -D | -B | -0 |\n"
@@ -70,31 +67,6 @@ static const struct cmd {
 	const char *cmd;
 	int (*func)(int argc, char **argv);
 } cmds[] = {
-/*	{ "address",	do_ipaddr },
-	{ "addrlabel",	do_ipaddrlabel },
-	{ "maddress",	do_multiaddr },
-	{ "route",	do_iproute },
-	{ "rule",	do_iprule },
-	{ "neighbor",	do_ipneigh },
-	{ "neighbour",	do_ipneigh },
-	{ "ntable",	do_ipntable },
-	{ "ntbl",	do_ipntable },
-	{ "link",	do_iplink },
-	{ "l2tp",	do_ipl2tp },
-	{ "fou",	do_ipfou },
-	{ "tunnel",	do_iptunnel },
-	{ "tunl",	do_iptunnel },
-	{ "tuntap",	do_iptuntap },
-	{ "tap",	do_iptuntap },
-	{ "token",	do_iptoken },
-	{ "tcpmetrics",	do_tcp_metrics },
-	{ "tcp_metrics", do_tcp_metrics },
-	{ "monitor",	do_ipmonitor },
-	{ "mroute",	do_multiroute },
-	{ "mrule",	do_multirule },
-	{ "netns",	do_netns },
-	{ "netconf",	do_ipnetconf },
-	*/
 	{ "xfrm",	do_xfrm },
 	{ "help",	do_help },
 	{ 0 }
